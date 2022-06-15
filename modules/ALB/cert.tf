@@ -1,7 +1,7 @@
 # The entire section create a certiface, public zone, and validate the certificate using DNS method
 
 # Create the certificate using a wildcard for all the domains created in blogsite.live
-resource "aws_acm_certificate" "blogsite" {
+resource "aws_acm_certificate" "mosesitoya" {
   domain_name       = "*.mosesitoya.link"
   validation_method = "DNS"
 }

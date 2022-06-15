@@ -21,7 +21,6 @@ tags = {
   Billing-Account = "554311352445"
 }
 
-
 ami-web = "ami-095a44e3df68f42c3"
 
 ami-bastion = "ami-0e52191ac17d454a0"
