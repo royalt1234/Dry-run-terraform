@@ -1,7 +1,7 @@
 # create key from key management system
 resource "aws_kms_key" "ACS-kms" {
   description = "KMS key "
-  policy      = <<EOF
+  policy      = jsonencode(
   {
   "Version": "2012-10-17",
   "Id": "kms-key-policy",
@@ -15,7 +15,7 @@ resource "aws_kms_key" "ACS-kms" {
     }
   ]
 }
-EOF
+  )
 }
 
 # create key alias
@@ -23,6 +23,7 @@ resource "aws_kms_alias" "alias" {
   name          = "alias/kms"
   target_key_id = aws_kms_key.ACS-kms.key_id
 }
+
 
 # create Elastic file system
 resource "aws_efs_file_system" "ACS-efs" {
